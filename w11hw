@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
-void ListStudent(int score[100],string [100],int NS);
-char Calgrade(int score[100],int NS);
+void ListStudent(int score[],string [],int NS);
+char Calgrade(int score[],int NS);
 int main() {
     int NS;
     string name[100] ;
@@ -18,13 +18,13 @@ int main() {
 
     return 0;
 }
-void ListStudent(int score[100],string name[100],int NS){
+void ListStudent(int score[],string name[],int NS){
     for(int i = 0; i< NS; i++){
         cout << "Student Name : " << name[i] << " Score " << i+1 << " = " << score [i] ;
         cout << "  Your grade is " << Calgrade(score,i) << endl;
     }
 }
-char Calgrade(int score[100],int i){
+char Calgrade(int score[],int i){
     char G;
     if (score[i] <= 100 && score[i] >= 80 )
         G = 'A';
