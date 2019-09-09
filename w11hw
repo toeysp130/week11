@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+void ListStudent(int score[100],string [100],int NS);
+char Calgrade(int score[100],int NS);
+int main() {
+    int NS;
+    string name[100] ;
+    int score[100] ;
+    cout << "Input Number of student : " ;
+    cin >> NS;
+    for (int i = 0 ; i < NS ; i++){
+        cout << "Input Name "<< i+1 << " : ";
+        cin >> name[i];
+        cout << "Input score " << i+1 << " : ";
+        cin >> score[i];
+    }
+    ListStudent(score ,name,NS );
+
+    return 0;
+}
+void ListStudent(int score[100],string name[100],int NS){
+    for(int i = 0; i< NS; i++){
+        cout << "Student Name : " << name[i] << " Score " << i+1 << " = " << score [i] ;
+        cout << "  Your grade is " << Calgrade(score,i) << endl;
+    }
+}
+char Calgrade(int score[100],int i){
+    char G;
+    if (score[i] <= 100 && score[i] >= 80 )
+        G = 'A';
+    else if (score[i] <= 79 && score[i] >= 70 )
+        G = 'B';
+    else if (score[i] <= 69 && score[i] >= 60 )
+        G = 'C';
+    else if (score[i] <= 59 && score[i] >= 50 )
+        G = 'D';
+    else if (score[i] <= 49)
+        G = 'F';
+    return(G);
+}
